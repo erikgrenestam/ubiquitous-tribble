@@ -18,7 +18,7 @@ class nlist:
         return pd.DataFrame(self.data, columns=['id_i', 'id']).astype(int)
 
 
-SHP_PATH = 'C:/Users/Erik/OneDrive/Work/Gis befolkning till Martin/befolkning.shp'
+SHP_PATH = _your_path
 
 points = fiona.open(SHP_PATH)
 ids = [ feat['properties']['id'] for feat in points ]
