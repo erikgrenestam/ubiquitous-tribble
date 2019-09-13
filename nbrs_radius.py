@@ -4,7 +4,7 @@ import fiona
 from shapely.geometry import shape
 import pandas as pd
 
-class nlist:
+class NbrList:
     
     def __init__(self):
         self.data = []
@@ -26,7 +26,7 @@ geoms = [ shape(feat["geometry"]) for feat in points ]
 list_arrays = [ np.array((geom.xy[0][0], geom.xy[1][0])) for geom in geoms ]
 point_tree = spatial.cKDTree(list_arrays)
 
-nbrs = nlist()
+nbrs = NbrList()
 
 df_pop = pd.read_csv('befolkning_2017_id.csv')
 
